@@ -1,0 +1,6 @@
+10/09/2020 12:14:10 ***************************** Controller executing using Action Method Injection *****************************
+10/09/2020 12:16:53 ***************************** Controller executing using Action Method Injection *****************************
+10/09/2020 12:16:54 ***************************** Controller executing using Action Method Injection *****************************
+10/09/2020 12:17:01 ***************************** Contoller executing using constructor injection *****************************
+10/09/2020 12:31:26 ***************************** Contoller executing using constructor injection *****************************
+10/09/2020 12:31:27 ***************************** Controller executing using Action Method Injection *****************************

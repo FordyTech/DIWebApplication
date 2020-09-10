@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-left">
+    <h3 class="text-left">Using the .Net Core Built-in Ioc Container for Dependency Injection instead of a 3rd Party like Ninject, Unity, Autofac etc.</h3>
+    <h2 class="display-4">Pros</h2>
+    <div>
+        <p>Nothing to install.</p>
+        <p>Simple to configure and use. 1 line: services.AddSingleton &lt;ILog, ConsoleLogger&gt;();</p>
+    </div>
+    <h2 class="display-4">Cons</h2>
+    <div>
+        <p>
+            Not rich in features (not meant to be).
+            <ul>
+                <li>Does not support property injection</li>
+                <li>Difficult to diagnose configuration mistakes.</li>
+                <li>Not great with generics.</li>
+                <li>Not great with conditional registration of classes. e.g. When you want to inject one object FileLogger and then another ConsoleLogger the next.</li>
+            </ul>
+            See more details at <a href="https://stackoverflow.com/questions/30681477/why-would-one-use-a-third-party-di-container-over-the-built-in-asp-net-core-di-c">Stack Overflow</a>
+        </p>
+        <p>Needs .Net Core.</p>
+    </div>
+    <h2 class="display-4">Conclusion</h2>
+    <div>
+        <p>Use it until you can't do something then consider a 3rd party.</p>
+    </div>
+
+    <h2 class="display-4">Notes</h2>
+
+    <div>
+        <p>The built-in IoC container supports three kinds of lifetimes:</p>
+        <p>
+            <ul>
+                <li>The IoC container will create a new instance of the specified service type every time you ask for it. This lifetime works best for lightweight, stateless services.</li>
+                <li>
+                    Scoped: IoC container will create an instance of the specified service type once per client request (connection) and will be shared in a single request.
+                    services.AddDbContext(&lt;InventoryContext&gt;) uses scoped lifetime in entity framework.
+                </li>
+                <li>Singleton: IoC container will create and share a single instance of a service throughout the application's lifetime. Every subsequent request uses the same instance.</li>
+            </ul>
+
+        </p>
+    </div>
+
+    <h2 class="display-4">References</h2>
+    <div>
+        <p>
+            <a href="https://www.tutorialsteacher.com/core/dependency-injection-in-aspnet-core">https://www.tutorialsteacher.com/core/dependency-injection-in-aspnet-core</a>
+            <br />
+            <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1">https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1</a>
+        </p>
+    </div>
+</div>
